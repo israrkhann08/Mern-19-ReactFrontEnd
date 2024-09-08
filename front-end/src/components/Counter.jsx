@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Counter = (props) => {
   const [count, setCount] = useState(0);
@@ -6,6 +6,17 @@ const Counter = (props) => {
   const increment = () => {
     setCount(count + 1);
   };
+ 
+  // four useCase of useEffect -1> without dependency,-2> with dependency -3>[count] pass state, 
+  // -4>mix 3 clean up function
+  useEffect( () => {
+    console.log("UseEffect run for count value: ", count);
+
+    return () => {
+        console.log("Clean up function", count);
+    }
+  },[count])
+
 
   return (
     <>
@@ -24,7 +35,7 @@ const Counter = (props) => {
       >
         Decrement
       </button>
-      
+
       <hr />
     </>
   );
