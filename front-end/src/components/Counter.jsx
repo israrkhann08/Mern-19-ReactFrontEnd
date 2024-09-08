@@ -6,20 +6,15 @@ const Counter = (props) => {
   const increment = () => {
     setCount(count + 1);
   };
- 
-  // four useCase of useEffect -1> without dependency,-2> with dependency -3>[count] pass state, 
-  // -4>mix 3 clean up function
-  useEffect( () => {
-    console.log("UseEffect run for count value: ", count);
 
-  
 
-    return () => {
-        console.log("Clean up function", count);
-      
-    }
-  },[count])
+//   useEffect(() => {
+//     console.log("UseEffect run for count value: ", count);
 
+//     return () => {
+//       console.log("Clean up function", count);
+//     };
+//   }, [count]);
 
   return (
     <>
@@ -33,12 +28,17 @@ const Counter = (props) => {
         Increment
       </button>
 
-      <button onClick={() => { setCount(count - 1);
+      <button
+        onClick={() => {
+          setCount(count - 1);
         }}
       >
         Decrement
       </button>
-
+      
+      <button style={{ marginLeft: "12px" }} onClick={ ()=> {
+        props.xyz()
+      }}>Delete</button>
       <hr />
     </>
   );
