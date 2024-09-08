@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Counter = (props) => {
+const Counter = ({itemName: name}) => {
   const [count, setCount] = useState(0);
 
   const increment = () => {
@@ -9,10 +9,10 @@ const Counter = (props) => {
 
   return (
     <>
-    <h3><u>{props.itemName}</u></h3>
-      <h2>
+    <h2><u>{name}</u></h2>
+      <h3>
         Counter: <u>{count}</u>
-      </h2>
+      </h3>
       <button onClick={increment} style={{ marginRight: "12px" }}>
         Increment
       </button>
@@ -23,6 +23,7 @@ const Counter = (props) => {
       >
         Decrement
       </button>
+      <hr />
     </>
   );
 };
