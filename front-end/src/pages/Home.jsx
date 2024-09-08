@@ -27,12 +27,20 @@ const Home = () => {
       <button onClick={addItemInputHandler}>Add Item</button>
 
       {items.map((item, index, arr) => {
-        return <Counter
-        key={index}
-         itemName={item}
-         xyz={(n) => {
-            console.log("xyz called for" , n);   
-         }} />;
+        return (
+          <Counter
+            xyz={() => {
+              const updateItems = [
+                ...items.slice(0, index),
+                ...items.slice(1 + index),
+              ];
+
+              setItems(updateItems);
+            }}
+            key={index}
+            itemName={item}
+          />
+        );
       })}
     </>
   );

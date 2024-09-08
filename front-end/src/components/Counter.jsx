@@ -8,13 +8,13 @@ const Counter = (props) => {
   };
 
 
-//   useEffect(() => {
-//     console.log("UseEffect run for count value: ", count);
+  //   useEffect(() => {
+  //     console.log("UseEffect run for count value: ", count);
 
-//     return () => {
-//       console.log("Clean up function", count);
-//     };
-//   }, [count]);
+  //     return () => {
+  //       console.log("Clean up function", count);
+  //     };
+  //   }, [count]);
 
   return (
     <>
@@ -35,10 +35,14 @@ const Counter = (props) => {
       >
         Decrement
       </button>
-      
-      <button style={{ marginLeft: "12px" }} onClick={ ()=> {
-        props.xyz()
-      }}>Delete</button>
+
+      <button
+        style={{ marginLeft: "12px" }}
+        onClick={() => {
+            props.xyz();
+        }}>
+        Delete
+      </button>
       <hr />
     </>
   );
