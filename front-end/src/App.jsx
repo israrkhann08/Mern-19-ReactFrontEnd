@@ -1,15 +1,16 @@
-import './App.css'
-import Counter from './components/Counter'
+import "./App.css";
+import Counter from "./components/Counter";
 
 function App() {
-
-
+  const iteams = ["Jeans", "Jackets", "Shirts"];
 
   return (
     <>
-       <Counter/>
+      {iteams.map((item, index, arr) => {
+        return <Counter itemName={item} />;
+      })}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
