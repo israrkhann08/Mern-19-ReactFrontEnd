@@ -13,15 +13,27 @@ function App() {
 
   const addItemInputHandler = () => {
     setItems([...items, userInput]);
+    setUserTnput("");
   };
 
   return (
     <>
-    <input onChange={inputChangeHandler}  placeholder="Enter iTeam Name"  style={{'padding': '7px'}} />
-    <button onClick={addItemInputHandler}>Add Item</button>
+    <input 
+    value={userInput} 
+    onChange={inputChangeHandler} 
+    placeholder="Enter iTeam Name" 
+    style={{'padding': '7px'}}
+     />
+
+    <button 
+    onClick={addItemInputHandler}>
+      Add Item
+    </button>
+
       {items.map((item, index, arr) => {
         return <Counter itemName={item} />;
       })}
+      
     </>
   );
 }

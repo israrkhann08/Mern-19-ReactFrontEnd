@@ -9,20 +9,22 @@ const Counter = (props) => {
 
   return (
     <>
-    <h2><u>{props.itemName}</u></h2>
+      <h2>
+        <u>{props.itemName}</u>
+      </h2>
       <h3>
         Counter: <u>{count}</u>
       </h3>
       <button onClick={increment} style={{ marginRight: "12px" }}>
         Increment
       </button>
-      <button
-        onClick={() => {
-          setCount(count - 1);
+
+      <button onClick={() => { setCount(count - 1);
         }}
       >
         Decrement
       </button>
+      
       <hr />
     </>
   );
