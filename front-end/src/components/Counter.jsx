@@ -12,13 +12,11 @@ const Counter = (props) => {
   useEffect( () => {
     console.log("UseEffect run for count value: ", count);
 
-    const inter = setInterval( () => {
-        console.log("hello");
-    },1000)
+  
 
     return () => {
         console.log("Clean up function", count);
-        clearInterval(inter)
+      
     }
   },[count])
 
