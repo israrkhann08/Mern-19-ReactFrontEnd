@@ -10,36 +10,38 @@ import UserAuth from "./pages/UserAuth";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
-
 function App() {
-
-
   return (
     <>
-    <Navbar/>
-     <Routes>
-          <Route index path="/" element={<Home/>} />
-          <Route path="products" element={<Products/>} />
-          <Route path="/product-details/:id" element={<ProductDetails/>} />
+      <Navbar />
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route path="products" element={<Products />} />
+        <Route path="/product-details/:id?" element={<ProductDetails />} />
 
-             {/* nested routes */}
-          <Route path="user-auth" element={<UserAuth/>}>
-              <Route index element={ <h1>this is default run on bases of parent (default behavir of my parent behavior)</h1> } /><Route/>
-             <Route path="login" element={<Login/>} />
-             <Route path="signup" element={<Signup/>} />
-          </Route>
+        {/* nested routes */}
+        <Route path="user-auth" >
+          <Route
+            index
+            element={
+              <h1 className="w-[200px] h-[120px] text-justify border-2 m-auto pt-[40px]">
+                this is default run on bases of parent (default behavir of my
+                parent behavior)
+              </h1>
+            }
+          />
+          <Route />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+        </Route>
 
+        {/* <Route path="/product-details/:id" element={<ProductDetails/>} /> */}
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
 
-          {/* <Route path="/product-details/:id" element={<ProductDetails/>} /> */}
-          <Route path="*" element={<ErrorPage/>} />
-     </Routes>
- 
-
-
-
-    {/* <Home/> */}
-    {/* <Products/> */}
-    {/* <ProductCard/> */}
+      {/* <Home/> */}
+      {/* <Products/> */}
+      {/* <ProductCard/> */}
     </>
   );
 }
