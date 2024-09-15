@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <>
-      <h1 className="flex w-full flex-col bg-slate-300 p-4 text-center text-4xl">
+      <h1 className="flex w-full flex-col bg-slate-600  text-lime-50 p-4 text-center text-4xl rounded-2xl">
         Navbar
       </h1>
       <br />

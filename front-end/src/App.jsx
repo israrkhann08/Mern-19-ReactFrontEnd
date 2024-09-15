@@ -11,11 +11,12 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 import XYZ from "./components/Layout";
+import PrivateRouter from "./components/PrivateRouter";
 
 function App() {
   return (
     <>
-     
+     {/* layout set here in XYZ Component  */}
       <Routes>
         <Route 
         index 
@@ -26,12 +27,15 @@ function App() {
         }
        />
 
+          {/* Private Route setup */}
         <Route
           path="products"
           element={
-            <XYZ>
-              <Products />
-            </XYZ>
+            <PrivateRouter> 
+                  <XYZ>
+                     <Products />
+                  </XYZ>  
+            </PrivateRouter>
           }
         />
 
