@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import Counter from "../components/Counter";
 import { useNavigate } from "react-router-dom"; // navigate hook use
+import userAuthContext from "../contexts/UserAuthContext";
 
 const Home = () => {
   const [items, setItems] = useState(["Jeans", "Jackets"]);
   const [userInput, setUserTnput] = useState("");
+
+const x = useContext(userAuthContext);
+console.log(x);
+
+
 
   const inputChangeHandler = (e) => {
     setUserTnput(e.target.value);
