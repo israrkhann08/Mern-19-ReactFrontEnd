@@ -44,7 +44,7 @@ function App() {
         <Route path="/product-details/:id?" element={<ProductDetails />} />
 
         {/* nested routes */}
-        <Route path="user-auth">
+        <Route  path="user-auth">
           <Route
             index
             element={
@@ -60,7 +60,7 @@ function App() {
         </Route>
 
         {/* <Route path="/product-details/:id" element={<ProductDetails/>} /> */}
-        <Route path="*" element={<ErrorPage />} />
+        {/* <Route path="*" element={<ErrorPage />} /> */}
       </Routes>
 
       {/* <Home/> */}
