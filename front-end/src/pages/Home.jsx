@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Counter from "../components/Counter";
+import { useNavigate } from "react-router-dom"; // navigate hook use
 
 const Home = () => {
   const [items, setItems] = useState(["Jeans", "Jackets"]);
@@ -15,8 +16,20 @@ const Home = () => {
     setUserTnput("");
   };
 
+  const navigate = useNavigate();
+
   return (
     <>
+      <button
+        onClick={() => {
+          navigate("/user-auth/login");
+        }}
+        className="mb-3 border-b-4 border-cyan-800 p-3"
+      >
+        Go To Login
+      </button>
+
+      <br />
       <input
         value={userInput}
         onChange={inputChangeHandler}
@@ -42,6 +55,8 @@ const Home = () => {
           />
         );
       })}
+
+      
     </>
   );
 };

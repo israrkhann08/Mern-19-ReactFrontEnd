@@ -9,6 +9,7 @@ import ErrorPage from "./pages/ErrorPage";
 import UserAuth from "./pages/UserAuth";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route index path="/" element={<Home />} />
+        <Route path="productsCard" element={<ProductCard/>}/>
         <Route path="products" element={<Products />} />
         <Route path="/product-details/:id?" element={<ProductDetails />} />
 
@@ -42,6 +44,8 @@ function App() {
       {/* <Home/> */}
       {/* <Products/> */}
       {/* <ProductCard/> */}
+
+      <Footer/>
     </>
   );
 }
